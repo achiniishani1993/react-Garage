@@ -27,7 +27,9 @@ const Counter = () => {
   }, [count]);
 
   return (
-    <div className="d-flex align-items-center gap-2">
+    <div className="d-flex align-items-center gap-2 container text-center">
+     <h1 style={{textAlign:"left", fontSize:"20px"}}>Count App with Auto</h1>
+   
       <button
         className="btn btn-outline-primary"
         style={{ width: "90px", marginTop: "20px" }}
