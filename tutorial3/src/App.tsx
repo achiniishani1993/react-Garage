@@ -1,4 +1,5 @@
 import Counter from "./components/Counter"
+import Logout from "./components/Logout"
 import Timer from "./components/Timer"
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
     </div>
     
        <Timer/>
+       <Logout/>
     </div>
   )
 }

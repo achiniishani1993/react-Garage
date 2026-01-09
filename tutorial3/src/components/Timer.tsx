@@ -73,6 +73,7 @@ const Timer = () => {
           </tr>
         </thead>
       </table>
+      <div>
       <button
         className="btn btn-warning opacity-75"
         style={{ width: "150px", padding: "5px", fontSize: "30px" }}
@@ -82,11 +83,12 @@ const Timer = () => {
       </button>
       <button
         className="btn btn-danger opacity-75"
-        style={{ width: "150px", padding: "5px", fontSize: "30px" }}
+        style={{ width: "150px", padding: "5px", fontSize: "30px", marginLeft:"10px" }}
         onClick={stopButtonClick}
       >
         Stop
       </button>
+      </div>
       <span>{state}</span>
     </div>
   );
