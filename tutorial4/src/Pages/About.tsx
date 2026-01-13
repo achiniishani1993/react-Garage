@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Toast from 'react-bootstrap/Toast';
 import {dummyJsonAPI} from "../axios";
+import Stack from 'react-bootstrap/Stack';
 
 const About = () => {
 const [posts, setPost] = useState <any[]>([]);
@@ -25,10 +26,15 @@ async function getPost (){
 <>
 <h1>About Page</h1>
 
-{posts.map((post, id)=>{
-return <div key={id}> {post.title} -$ {post.body}</div>
-
-})}
+     <Stack gap={3}>
+      {posts.map((post, id) => (
+      <div key={id}>
+       <div className="p-2">{post.title}</div>
+      <div className="p-2">{post.body}</div>
+      </div>
+      ))};
+    
+    </Stack>
 
 
  <Toast onClose={()=> setShow(false)} show={show} bg="danger">
