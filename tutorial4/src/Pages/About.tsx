@@ -1,10 +1,44 @@
+import { useEffect, useState } from "react"
+import Toast from 'react-bootstrap/Toast';
+import {dummyJsonAPI} from "../axios";
 
 const About = () => {
+const [posts, setPost] = useState <any[]>([]);
+const [error, setError] = useState ("");
+const [show, setShow]= useState(false);
+
+useEffect (()=>{
+   getPost();
+
+},[]);
+async function getPost (){
+   try {
+   const response = await dummyJsonAPI.get("/posts")
+   setPost(response.data.posts)
+   } catch (error:any) {
+     setError(error.message);
+     setShow(true);
+   }
+};
+
   return (
-    <div>
+<>
 <h1>About Page</h1>
 
-    </div>
+{posts.map((post, id)=>{
+return <div key={id}> {post.title} -$ {post.body}</div>
+
+})}
+
+
+ <Toast onClose={()=> setShow(false)} show={show} bg="danger">
+      <Toast.Header>
+        <img src="holder.js/20x20?text=%20" className="rounded me-2" alt=""  />
+      </Toast.Header>
+      <Toast.Body>{error}</Toast.Body>
+    </Toast>
+
+ </>  
   )
 }
 

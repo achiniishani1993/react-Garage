@@ -1,4 +1,4 @@
-import axios from "../axios";
+import {jsonPlaceholderAPI} from "../axios";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-bootstrap";
 import Toast from 'react-bootstrap/Toast';
@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     const headers = { headers: { 'Authorization': "AuthStr" }}
-    axios
+    jsonPlaceholderAPI
       .get("/users", headers)
       .then((response) => {setUsers(response.data);})
       .catch((err)=>{
