@@ -1,18 +1,20 @@
-import axios from "axios";
+import axios from "../axios";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-bootstrap";
 import Toast from 'react-bootstrap/Toast';
+import {Link} from 'react-router-dom';
 
 const Home = () => {
   const [users, setUsers] = useState<any[]>([]);
   const [error, setError] = useState("");
   const [show, setShow]= useState(false);
 
+
   useEffect(() => {
     const headers = { headers: { 'Authorization': "AuthStr" }}
     axios
-      .get("https://jsonplaceholder.typicode.com/users", headers)
-      .then((response) => {setUsers(response.data)})
+      .get("/users", headers)
+      .then((response) => {setUsers(response.data);})
       .catch((err)=>{
         setError(err.message);
         setShow(true);
@@ -21,8 +23,11 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home Page</h1>
+      <h1>Home Page</h1> 
+      <Link to= '/about'>About Page</Link> <br/>
+      <Link to= '/contact'>Contact Us</Link>
       <h2>Contact Information</h2>
+   
       <table className="table">
         <thead>
           <tr>
