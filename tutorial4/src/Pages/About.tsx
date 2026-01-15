@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Toast from 'react-bootstrap/Toast';
 import {dummyJsonAPI} from "../axios";
 import Stack from 'react-bootstrap/Stack';
+import { Link } from "react-router-dom";
 
 const About = () => {
 const [posts, setPost] = useState <any[]>([]);
@@ -25,7 +26,7 @@ async function getPost (){
   return (
 <>
 <h1>About Page</h1>
-
+<Link to= '/'>Home Page</Link>
      <Stack gap={3}>
       {posts.map((post, id) => (
       <div key={id}>

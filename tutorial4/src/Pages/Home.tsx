@@ -25,8 +25,8 @@ const Home = () => {
     <>
       <h1>Home Page</h1> 
       <Link to= '/about'>About Page</Link> <br/>
-      <Link to= '/contact'>Contact Us</Link>
-      <h2>Contact Information</h2>
+      <Link to= '/contact'>Contact Us</Link> 
+      <h4> Information</h4>
    
       <table className="table">
         <thead>
