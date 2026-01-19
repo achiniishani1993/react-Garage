@@ -11,7 +11,7 @@ const Button = ({ minValue = 0 }) => {
     SetValue((prevValue) => prevValue - 1);
   };
   const handleReset = () => {
-    SetValue(minValue);
+    SetValue(0);
   };
 
   return (
